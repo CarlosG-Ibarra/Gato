@@ -24,8 +24,8 @@ class Celda extends StatelessWidget {
         height: alto,
       );
     }
-    if (estado == EstadosCelda.cross) return Image.asset('imagenes/x.png');
-    if (estado == EstadosCelda.circle) return Image.asset('imagenes/o.png');
+    if (estado == EstadosCelda.cross) return Image.asset('lib/resources/imagenes/x.png');
+    if (estado == EstadosCelda.circle) return Image.asset('lib/resources/imagenes/o.png');
 
     return null;
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'botonera.dart';
+import '../widgets/botonera.dart';
 import 'package:gato/config/config.dart';
 import 'package:flutter/services.dart'; // Import this
 import 'dart:io' show exit, Platform; // Import this
@@ -37,15 +37,49 @@ class _IndexState extends State<Index> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'X: $winsX - O: $winsO - Empates: $ties',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'X: ',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.lightBlue,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '$winsX | ',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'O: ',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '$winsO | Empates: $ties',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
               child: Stack(
                 children: <Widget>[
-                  Center(child: Image.asset('imagenes/board.png')),
+                  Center(child: Image.asset('lib/resources/imagenes/board.png')),
                   Center(child: Botonera(onGameOver: _updateScore)),
                 ],
               ),
