@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gato/config/config.dart';
 import 'package:gato/widgets/celda.dart';
-import 'package:flutter/services.dart'; // Import this
-import 'dart:io' show exit, Platform; // Import this
+import 'package:flutter/services.dart';
+import 'dart:io' show exit, Platform;
 
 class Botonera extends StatefulWidget {
   final VoidCallback onGameOver;
@@ -59,7 +59,6 @@ class _BotoneraState extends State<Botonera> {
           ? EstadosCelda.circle
           : EstadosCelda.cross;
 
-      // Check if game is over
       if (isGameOver()) {
         EstadosCelda ganador = buscarGanador();
         _updateScores(ganador);
@@ -145,7 +144,7 @@ class _BotoneraState extends State<Botonera> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                resetGame(); // Restart the game
+                resetGame();
               },
               child: Text('Continuar'),
             ),
@@ -155,7 +154,7 @@ class _BotoneraState extends State<Botonera> {
                   SystemNavigator.pop();
                 } else if (Platform.isWindows) {
                   exit(0);
-                }// Close app
+                }
               },
               child: Text('Salir'),
             ),

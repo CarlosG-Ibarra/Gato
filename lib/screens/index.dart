@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/botonera.dart';
 import 'package:gato/config/config.dart';
-import 'package:flutter/services.dart'; // Import this
-import 'dart:io' show exit, Platform; // Import this
+import 'package:flutter/services.dart';
+import 'dart:io' show exit, Platform;
 
 class Index extends StatefulWidget {
   const Index({super.key});
@@ -170,7 +170,6 @@ class _IndexState extends State<Index> {
 
   void _updateScore() {
     setState(() {
-      // This will refresh the scoreboard
     });
   }
 }
